@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="433.0" prefWidth="692.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller">
+   <children>
+      <TabPane layoutX="-8.0" prefHeight="433.0" prefWidth="692.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Cakes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="50.0" layoutY="51.0" prefHeight="17.0" prefWidth="139.0" text="Fill in the required fields  : " />
+                        <Label layoutX="33.0" layoutY="108.0" text="Cake Name : " />
+                        <Label layoutX="49.0" layoutY="150.0" text="Filling : " />
+                        <Label layoutX="43.0" layoutY="192.0" text="Frosting : " />
+                        <Label layoutX="53.0" layoutY="238.0" text="Price :" />
+                        <TextField fx:id="NameCake" layoutX="109.0" layoutY="104.0" />
+                        <TextField fx:id="FillingCake" layoutX="109.0" layoutY="146.0" />
+                        <TextField fx:id="FrostingCake" layoutX="109.0" layoutY="188.0" />
+                        <TextField fx:id="PriceCake" layoutX="109.0" layoutY="233.0" />
+                        <Button fx:id="addCake" layoutX="109.0" layoutY="277.0" mnemonicParsing="false" onAction="#AddCakeButton" text="Add Cake" />
+                        <Button fx:id="clear1" layoutX="590.0" layoutY="362.0" mnemonicParsing="false" onAction="#clearFields1" text="Clear Fields" />
+                        <Button fx:id="removeCakeButton" layoutX="551.0" layoutY="295.0" mnemonicParsing="false" onAction="#removeCake" text="Remove Cake" />
+                        <Label layoutX="346.0" layoutY="269.0" text="Insert ID of the cake you want to delete :" />
+                        <Label layoutX="352.0" layoutY="300.0" text="ID :" />
+                        <TextField fx:id="id_removeCake" layoutX="382.0" layoutY="295.0" />
+                        <TableView fx:id="cakeTableView" layoutX="293.0" layoutY="50.0" prefHeight="200.0" prefWidth="378.0">
+                          <columns>
+                            <TableColumn fx:id="id_cake" prefWidth="32.0" text="ID" />
+                            <TableColumn fx:id="name_cake" prefWidth="106.0" text="Name" />
+                              <TableColumn fx:id="filling_cake" prefWidth="90.0" text="Filling" />
+                              <TableColumn fx:id="frosting_cake" minWidth="0.0" prefWidth="71.0" text="Frosting" />
+                              <TableColumn fx:id="price_cake" prefWidth="78.0" text="Price" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Orders">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="529.0" prefWidth="616.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="212.0" text="Delivery date : " />
+                        <Label layoutX="38.0" layoutY="38.0" text="Fill in the requested fields : " />
+                        <Label layoutX="38.0" layoutY="74.0" text="Customer :" />
+                        <Label layoutX="32.0" layoutY="107.0" text="Phone number : " />
+                        <Label layoutX="35.0" layoutY="138.0" text="Birthday Wish :" />
+                        <TextField fx:id="Customer" layoutX="133.0" layoutY="70.0" />
+                        <TextField fx:id="phone" layoutX="133.0" layoutY="103.0" />
+                        <TextField fx:id="wish" layoutX="133.0" layoutY="134.0" />
+                        <Label layoutX="44.0" layoutY="176.0" text="Weigth : " />
+                        <TextField fx:id="weigth" layoutX="133.0" layoutY="171.0" />
+                        <Label layoutX="29.0" layoutY="253.0" text="Cake ID :" />
+                        <Button fx:id="addOrder" layoutX="71.0" layoutY="287.0" mnemonicParsing="false" onAction="#AddOrderButton" text="Add Order" />
+                        <DatePicker fx:id="date" layoutX="133.0" layoutY="207.0" prefHeight="26.0" prefWidth="143.0" />
+                        <Button fx:id="clear2" layoutX="580.0" layoutY="362.0" mnemonicParsing="false" onAction="#clearFields2" text="Clear Fields" />
+                        <TableView fx:id="orderTableView" layoutX="304.0" layoutY="24.0" prefHeight="211.0" prefWidth="374.0" AnchorPane.bottomAnchor="167.0" AnchorPane.leftAnchor="304.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="24.0">
+                          <columns>
+                            <TableColumn fx:id="id_order" prefWidth="31.0" text="ID" />
+                            <TableColumn fx:id="name_order" prefWidth="69.0" text="Customer" />
+                              <TableColumn fx:id="cake_order" prefWidth="48.0" text="Cake" />
+                              <TableColumn fx:id="delivery_order" minWidth="0.0" prefWidth="79.0" text="Delivered by" />
+                              <TableColumn fx:id="weigth_order" prefWidth="49.0" text="Weigth" />
+                              <TableColumn fx:id="wish_order" minWidth="0.0" prefWidth="44.0" text="Wish" />
+                              <TableColumn fx:id="phone_order" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="57.0" text="Phone " />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="320.0" layoutY="245.0" text="Insert ID of the order you want to delete :" />
+                        <Label layoutX="363.0" layoutY="279.0" text="ID :" />
+                        <TextField fx:id="id_removeOrder" layoutX="400.0" layoutY="274.0" />
+                        <Button fx:id="removeOrderButton" layoutX="573.0" layoutY="274.0" mnemonicParsing="false" onAction="#removeOrder" text="Remove Order" />
+                        <TextField fx:id="CakeID" layoutX="124.0" layoutY="241.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Update Orders &amp; Cakes">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.48427152317880795" layoutX="-1.0" layoutY="-1.0" prefHeight="405.0" prefWidth="692.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="170.0" prefWidth="100.0">
+                                 <children>
+                                    <Label layoutX="97.0" layoutY="20.0" text="UPDATE CAKE" textAlignment="CENTER" textFill="#2c8297" underline="true" />
+                                    <Label layoutX="21.0" layoutY="50.0" text="Enter the id of the cake you want to update :" />
+                                    <Label layoutX="63.0" layoutY="76.0" text="ID : " />
+                                    <Label layoutX="21.0" layoutY="114.0" text="Enter the updated detalis about the cake :" />
+                                    <Label layoutX="33.0" layoutY="145.0" text="Cake Name :" />
+                                    <TextField fx:id="id_updateCake" layoutX="90.0" layoutY="72.0" />
+                                    <Label layoutX="33.0" layoutY="177.0" text="Filling :" />
+                                    <Label layoutX="33.0" layoutY="208.0" text="Frosting :" />
+                                    <Label layoutX="33.0" layoutY="237.0" text="Price :" />
+                                    <TextField fx:id="cake_update" layoutX="114.0" layoutY="141.0" />
+                                    <TextField fx:id="filling_update" layoutX="114.0" layoutY="173.0" />
+                                    <TextField fx:id="frosting_update" layoutX="114.0" layoutY="204.0" />
+                                    <TextField fx:id="price_update" layoutX="114.0" layoutY="233.0" />
+                                    <Button fx:id="cakeUpdateButton" layoutX="106.0" layoutY="287.0" mnemonicParsing="false" onAction="#cakeUpdate" text="Update Cake" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="386.0" prefWidth="374.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="98.0" layoutY="14.0" text="UPDATE ORDER" textFill="#a83131" underline="true" />
+                                    <Label layoutX="25.0" layoutY="43.0" text="Enter the id of the order you want to update :" />
+                                    <Label layoutX="44.0" layoutY="70.0" text="ID :" />
+                                    <Label layoutX="20.0" layoutY="96.0" text="Enter the updated detalis about the order :" />
+                                    <TextField fx:id="id_updateOrder" layoutX="74.0" layoutY="66.0" />
+                                    <Label fx:id="customer_update" layoutX="44.0" layoutY="123.0" text="Customer :" />
+                                    <Label layoutX="35.0" layoutY="153.0" text="Phone number :" />
+                                    <Label layoutX="37.0" layoutY="187.0" text="Birthday Wish :" />
+                                    <Label layoutX="39.0" layoutY="218.0" text="Weigth :" />
+                                    <Label layoutX="34.0" layoutY="249.0" text="Delivery Date :" />
+                                    <TextField fx:id="order_update" layoutX="133.0" layoutY="118.0" />
+                                    <TextField fx:id="phone_update" layoutX="133.0" layoutY="148.0" />
+                                    <TextField fx:id="wish_update" layoutX="133.0" layoutY="182.0" />
+                                    <TextField fx:id="weigth_update" layoutX="133.0" layoutY="213.0" />
+                                    <TextField fx:id="cakeID_update" layoutX="133.0" layoutY="280.0" />
+                                    <Label layoutX="39.0" layoutY="285.0" text="ID cake :" />
+                                    <Button fx:id="orderUpdateButton" layoutX="154.0" layoutY="319.0" mnemonicParsing="false" onAction="#orderUpdate" text="Update Order" />
+                                    <DatePicker fx:id="delivery_update" layoutX="132.0" layoutY="245.0" prefHeight="26.0" prefWidth="161.0" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Reports">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="15.0" text="Show cakes cheaper than :" />
+                        <TextField fx:id="cheaperThan" layoutX="167.0" layoutY="11.0" onAction="#CakeReport" prefHeight="26.0" prefWidth="47.0" />
+                        <Label layoutX="300.0" layoutY="15.0" text="Show orders of the cake : " />
+                        <TextField fx:id="orderOfCake" layoutX="439.0" layoutY="11.0" onAction="#OrderReport1" prefHeight="26.0" prefWidth="76.0" />
+                        <Label layoutX="14.0" layoutY="251.0" text="Enter the date you want the orders showed to be delivered by :" />
+                        <DatePicker fx:id="dateDeliveredBy" layoutX="352.0" layoutY="247.0" onAction="#OrderReport2" prefHeight="26.0" prefWidth="127.0" />
+                        <TableView fx:id="CakeReportTableView" layoutX="19.0" layoutY="42.0" prefHeight="196.0" prefWidth="266.0">
+                          <columns>
+                            <TableColumn fx:id="CakeReportID" prefWidth="31.0" text="ID" />
+                            <TableColumn fx:id="CakeReportName" prefWidth="58.0" text="Name" />
+                              <TableColumn fx:id="CakeReportFilling" prefWidth="55.0" text="Filling" />
+                              <TableColumn fx:id="CakeReportFrosting" prefWidth="61.0" text="Frosting" />
+                              <TableColumn fx:id="CakeReportPrice" prefWidth="60.0" text="Price" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="OrderOfCakeReportTableView" layoutX="305.0" layoutY="41.0" prefHeight="197.0" prefWidth="280.0">
+                          <columns>
+                            <TableColumn fx:id="OrderRep1ID" prefWidth="22.0" text="ID" />
+                            <TableColumn fx:id="OrderRep1Customer" prefWidth="49.0" text="Customer" />
+                              <TableColumn fx:id="OrderRep1Cake" prefWidth="32.0" text="Cake" />
+                              <TableColumn fx:id="OrderRep1Deliver" prefWidth="38.0" text="Delivered By" />
+                              <TableColumn fx:id="OrderRep1Weigth" minWidth="3.0" prefWidth="56.0" text="Weigth" />
+                              <TableColumn fx:id="OrderRep1Wish" minWidth="0.0" prefWidth="35.0" text="Wish" />
+                              <TableColumn fx:id="OrderRep1Phone" maxWidth="110.0" minWidth="-1.0" prefWidth="47.0" text="Phone" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="OrderOfDateReportTableView" layoutX="18.0" layoutY="276.0" prefHeight="84.0" prefWidth="565.0">
+                          <columns>
+                            <TableColumn fx:id="OrderRep2ID" prefWidth="27.0" text="ID" />
+                            <TableColumn fx:id="OrderRep2Customer" prefWidth="77.0" text="Customer" />
+                              <TableColumn fx:id="OrderRep2Cake" prefWidth="74.0" text="Cake" />
+                              <TableColumn fx:id="OrderRep2Deliver" prefWidth="117.0" text="Delivered By" />
+                              <TableColumn fx:id="OrderRep2Weigth" prefWidth="86.0" text="Weigth" />
+                              <TableColumn fx:id="OrderRep2Wish" prefWidth="85.0" text="Wish" />
+                              <TableColumn fx:id="OrderRep2Phone" prefWidth="98.0" text="Phone" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="OK_cakeReport" layoutX="218.0" layoutY="12.0" mnemonicParsing="false" onAction="#CakeReport" prefHeight="26.0" prefWidth="55.0" text="OK" />
+                        <Button fx:id="OrderRep1Button" layoutX="529.0" layoutY="12.0" mnemonicParsing="false" onAction="#OrderReport1" prefHeight="26.0" prefWidth="57.0" text="OK" />
+                        <Button fx:id="OrderRep2Button" layoutX="488.0" layoutY="247.0" mnemonicParsing="false" onAction="#OrderReport2" prefHeight="26.0" prefWidth="52.0" text="OK" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
